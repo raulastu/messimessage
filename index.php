@@ -12,28 +12,48 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
+
         <link rel="stylesheet" href="css/normalize.css">
+        <link href='css/fonts.css' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/main.css">
         
+
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
         <!-- <link href='http://fonts.googleapis.com/css?family=Clicker+Script' rel='stylesheet' type='text/css'> -->
         <!-- <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'> -->
         <!-- <link href='http://fonts.googleapis.com/css?family=Cedarville+Cursive' rel='stylesheet' type='text/css'> -->
-        <link href='css/fonts.css' rel='stylesheet' type='text/css'>
+
 
 
     </head>
+    <?php
+        $m="";  
+        if(isset($_GET['m'])){
+            $m=$_GET['m'];
+        }
+    ?>
     <body>
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
-
-        <canvas id="canv" >
-        </canvas>
-        <input id="message" onkeyup="drawMessiMessage()" type="text"
-        	style="width:500px"
-        	/>
-
+        <!-- <div class="siteHolder animated fadeInDown">
+            <h1>messigi.com</h1>
+        </div> -->
+        <div class="siteHolder animated fadeInDown">
+            <h1 style="font-family: Ubuntu; color:#1ba1e2;
+                font-size:5em;
+                margin:0;">
+                Messige.com</h1>
+            <h2 style="font-family: Ubuntu; 
+                margin:0;"> 
+                Make Messi message you!</h2>
+            <canvas id="canv" ></canvas>
+            <div style="font-family: Ubuntu">Just start typing, see what messi has, and post it on fb</div>
+            <input id="message" 
+                maxlength="41"  
+                class="txtMsg" onkeyup="drawMessiMessage()" type="text" value="<?php echo $m;?>"/>
+        </div>
+        
         <!-- Add your site or application content here -->
         <!-- <p id="para">Hello world! This is HTML5 Boilerplate.</p> -->
 
